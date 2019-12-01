@@ -9,7 +9,7 @@ Given a sorted array of unsigned integers, the right circular shift operation `>
 
 The search function needs to return an index of a given number in the array or a `-1` if the array does not contain such number.
 
-# The problem
+# Possible solution
 There is a well-known [binary search algorithm](https://en.wikipedia.org/wiki/Binary_search_algorithm), that allows us to subdivide an already sorted (usually in the ascending order) array to quickly determine the index of the element. The algorithm performs a maximum of `O(log(n))` subdivisions and may be implemented either as a recursive function or as a loop and thus is very effective and easy to understand. The binary search can not be used in the sorted but circulary shifted array without modifications, because it has to know the starting search index, which could be determined in various techniques not to be discussed in this paper. If we however prove that any of it's half-range is sorted and it can be easily determined, we could easily check whether the element is in this range and select either **that** or **an another** range for further checks. Thus this approach could potentially operate with the same time complexity as the regular binary search.
 
 # The proof
