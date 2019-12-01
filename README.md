@@ -21,7 +21,8 @@ For an array of `n` elements, each right-shift rotation of `r` can be replaced w
 
 # The algorithm
 The algorithm could be implemented in either recursive or iterative approach. In search for element `e` in the array `A` is an array, `l` is 0, `h` is n-1:
-```find(A[], e, l, h)
+```
+find(A[], e, l, h)
 {
 	if l > h: return -1
 	mid = (l + h) / 2
