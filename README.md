@@ -20,10 +20,8 @@ For an array of `n` elements, each right-shift rotation of `r` can be replaced w
 > **Whether or not the half-range is sorted can be determined in a single comparison with O(1) time complexity.**
 
 # The algorithm
-The algorithm could be implemented in either recursive or iterative approach. In search for element `e` in the array `A` is an array, `l` is 0, `h` is n-1.
-
-`
-find(A[], e, l, h)
+The algorithm could be implemented in either recursive or iterative approach. In search for element `e` in the array `A` is an array, `l` is 0, `h` is n-1:
+```find(A[], e, l, h)
 {
 	if l > h: return -1
 	mid = (l + h) / 2
@@ -37,12 +35,12 @@ find(A[], e, l, h)
 		if e in [A[mid]..A[h]]: return find(A, e, mid+1, h)
 		otherwise: return find(A, e, l, mid-1)
 }
-`
+```
 
 # The interactive demo
-For the sake of the demo, the array is filled with positive integers in range `[0..9]`. In this demo you will be prompted to input the rotation amount and the element to find. The demo outputs the current state of the array along with the recursion depth for each stage and the next action to be performed.
+For the sake of the demo, the array is filled with positive integers in range `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`. In this demo you will be prompted to input the rotation amount and the element to find. The demo outputs the current state of the array along with the recursion depth for each stage and the next action to be performed.
 
 # Further improvements
 Alghough the algorithm's complexity is still `O(log(n))`, it requires an increased number of comparisons and array accesses. The number of array accesses can be reduced by caching already fetched values into local variables. 
 
-The number of comparisons can be reduced by **marking the half-range as already sorted if the sorted half-range was chosen for further subdivision**. Once the half-range was marked, the further steps can be reduced to plain range checks.
+The number of comparisons and array accesses can be reduced by **marking the half-range as already sorted if the sorted half-range was chosen for further subdivision**. Once the half-range was marked, the further steps can be reduced to plain range checks as in the regular binary search.
