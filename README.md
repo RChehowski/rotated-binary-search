@@ -1,7 +1,10 @@
 # The problem
 Given a sorted array of unsigned integers, the right circular shift operation `>>` and the left circular shift operation `<<`. The value of the shift amount is always a positive integer. For example:
+
 > `[0, 1, 2, 3, 4] >> 2` is `[3, 4, 0, 1, 2]`
+>
 > `[0, 1, 2, 3, 4] << 2` is `[2, 3, 4, 0, 1]`
+>
 > `[0, 1, 2, 3, 4] >> 0` is `[0, 1, 2, 3, 4]`
 
 The search function needs to return an index of a given number in the array or a `-1` if the array does not contain such number.
@@ -17,6 +20,7 @@ For an array of `n` elements, each right-shift rotation of `r` can be replaced w
 
 # The algorithm
 The algorithm could be implemented in either recursive or iterative approach. In search for element `e` in the array `A` is an array, `l` is 0, `h` is n-1.
+
 `find(A[], e, l, h)
 {
 	if l > h: return -1
